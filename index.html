@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyDatabaseSQL - Lightweight SQL development tool</title>
+  <meta name="description"
+    content="MyDatabaseSQL is a lightweight SQL development tool supporting SQLite, MySQL, MariaDB and Oracle.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/svg+xml" href="images/mydb.svg">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) { }
+      if (!t) t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="top">
+
+  <div class="title-bar">
+    <div class="wrap">
+      <div class="title">MyDatabaseSQL</div>
+      <div class="short-desc">A lightweight SQL development tool for Windows and Linux</div>
+      <div class="db-badges"><span class="badge">SQLite</span><span class="badge">MySQL</span><span
+          class="badge">MariaDB</span><span class="badge">Oracle</span></div>
+    </div>
+  </div>
+
+  <div class="navbar">
+    <div class="wrap">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#changelog">Changelog</a></li>
+        <li><a href="#builds">Builds</a></li>
+        <li><a href="https://github.com/MyDatabaseSQL/">GitHub</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="nav-btn theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme">
+          <span class="lbl-dark">&#9790; Dark</span><span class="lbl-light">&#9728; Light</span>
+        </button>
+        <button class="nav-btn menu-btn" id="menu-btn" type="button" aria-label="Menu" aria-expanded="false"
+          aria-controls="nav-links">&#9776;</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <div class="panel" id="overview">
+      <h1>Overview</h1>
+      <div class="panel-body">
+        <div class="cols">
+          <div>
+            <p>MyDatabaseSQL is a fast, focused SQL development tool for <b>SQLite</b>, <b>MySQL</b>, <b>MariaDB</b> and
+              <b>Oracle</b>. It gives you a clean editor, a schema browser and a powerful result grid in a small package
+              that starts in seconds.
+            </p>
+            <p>If you try it out, feedback is very welcome. Please report bugs and feature requests on the project's <a
+                href="https://github.com/MyDatabaseSQL/Home/issues">GitHub issues page</a>.</p>
+            <p class="btn-row"><a class="btn" href="#builds">Download</a>
+              <!-- <a class="btn default" href="https://github.com/MyDatabaseSQL/MyDatabaseSQL">View source</a> -->
+            </p>
+          </div>
+          <div>
+            <pre class="code"><span class="c">-- Example SQL query script</span>
+<span class="k">SELECT</span> c.name, <span class="k">COUNT</span>(o.id) <span class="k">AS</span> orders
+<span class="k">FROM</span> customers c
+<span class="k">LEFT JOIN</span> orders o <span class="k">ON</span> o.customer_id = c.id
+<span class="k">WHERE</span> c.country = <span class="s">'US'</span>
+<span class="k">GROUP BY</span> c.name
+<span class="k">ORDER BY</span> orders <span class="k">DESC</span>;</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel alt-1" id="databases">
+      <h1>Supported Databases</h1>
+      <div class="panel-body">
+        <div class="db-row">
+          <div class="db"><b>SQLite</b><span>File-based, zero configuration</span></div>
+          <div class="db"><b>MySQL</b><span>Popular open-source RDBMS</span></div>
+          <div class="db"><b>MariaDB</b><span>MySQL-compatible fork</span></div>
+          <div class="db"><b>Oracle</b><span>Enterprise Oracle Database</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="features">
+      <h1>Features</h1>
+      <div class="panel-body">
+        <ul class="checks">
+          <li>SQLite, MySQL, MariaDB and Oracle in one tool</li>
+          <li>Syntax highlighting and auto-completion for each SQL dialect</li>
+          <li>Schema browser for tables, views, columns and indexes</li>
+          <li>Read-only relationship diagram for every schema</li>
+          <li>Sortable, filterable result grid with a per-statement message log</li>
+          <li>Export results to CSV or copy them as INSERT statements</li>
+          <li>Table designer that generates CREATE and ALTER statements</li>
+          <li>Multiple script tabs and movable, dockable panels</li>
+          <li>Code folding, bookmarks and find/replace with regular expressions</li>
+          <li>Query history and saved scripts</li>
+          <li>Auto-save for file-backed scripts</li>
+          <li>Saved sources with device-locked stored passwords</li>
+          <li>Light and dark themes with custom editor font and syntax colours</li>
+          <li>Keyboard shortcuts for common tasks</li>
+          <li>Lightweight with fast startup</li>
+          <li>Cross-platform builds for Windows x64 and Debian-based Linux x64</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel alt-1" id="screenshots">
+      <h1>Screenshots</h1>
+      <div class="panel-body">
+        <div class="shots">
+          <button class="shot" data-full="images/screenshots/1.png" data-title=""> <img
+              src="images/screenshots/1.png" alt="" loading="lazy" width="400" height="250">
+            <span>Output messages after execution</span>
+          </button>
+          <button class="shot" data-full="images/screenshots/2.png" data-title=""> <img
+              src="images/screenshots/2.png" alt="" loading="lazy" width="400" height="250">
+            <span>Relationships diagram view</span>
+          </button>
+          <button class="shot" data-full="images/screenshots/3.png" data-title=""> <img
+              src="images/screenshots/3.png" alt="" loading="lazy" width="400" height="250">
+            <span>Code folding, bookmarks, and auto-completion</span>
+          </button>
+          <button class="shot" data-full="images/screenshots/4.png" data-title=""> <img
+              src="images/screenshots/4.png" alt="" loading="lazy" width="400"
+              height="250">
+            <span>Result grid with filter</span>
+          </button>
+          <button class="shot" data-full="images/screenshots/5.png" data-title=""> <img
+              src="images/screenshots/5.png" alt="" loading="lazy" width="400" height="250">
+            <span>Customization</span>
+          </button>
+          <button class="shot" data-full="images/screenshots/6.png" data-title=""> <img
+              src="images/screenshots/6.png" alt="" loading="lazy" width="400" height="250">
+            <span>Query history and saved queries</span>
+          </button>
+          <button class="shot" data-full="images/screenshots/7.png" data-title=""> <img
+              src="images/screenshots/7.png" alt="" loading="lazy" width="400" height="250">
+            <span>Saved sources</span>
+          </button>
+          <button class="shot" data-full="images/screenshots/8.png" data-title=""> <img
+              src="images/screenshots/8.png" alt="" loading="lazy" width="400" height="250">
+            <span>New database connection</span>
+          </button>
+          <button class="shot" data-full="images/screenshots/9.png" data-title=""> <img
+              src="images/screenshots/9.png" alt="" loading="lazy" width="400" height="250">
+            <span>Beginner-friendly DDL and DML</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="changelog">
+      <h1>Changelog</h1>
+      <div class="panel-body">
+        <div class="accordion">
+          <details class="entry" open>
+            <summary><span class="ver">0.1.0</span><span class="prerelease">Pre-release</span><span class="date">November 20th, 2026</span>
+            </summary>
+            <div class="entry-body">
+              <p>This is the first release of the software. There are no changes to report at this time.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel alt-1" id="builds">
+      <h1>Builds</h1>
+      <div class="panel-body">
+        <p class="note">Install the version compatible with your operating system. Both builds are 64-bit only.</p>
+        <ul class="reqs">
+          <li><b>Windows:</b> Windows 10 version 1809 (build 17763) or newer.</li>
+          <li><b>Linux:</b> a Debian-based distribution with glibc 2.35 or newer &mdash; Ubuntu 22.04 LTS, Debian 12 or Linux Mint 21 and newer.</li>
+        </ul>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Version</th>
+                <th>Windows x64</th>
+                <th>Debian-based Linux x64</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="v">0.1.0</td>
+                <td><a class="btn sm"
+                    href="https://github.com/MyDatabaseSQL/Home/releases/">Download</a>
+                </td>
+                <td><button class="btn sm" type="button" disabled
+                    title="Linux build coming soon">Download</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <footer>&copy; <span id="year">2026</span> MyDatabaseSQL &middot; <a
+      href="https://github.com/MyDatabaseSQL">GitHub</a></footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Screenshot viewer">
+    <div class="lb-inner">
+      <img src="" alt="">
+      <div class="lb-cap"></div>
+      <button class="lb-ctl lb-prev" aria-label="Previous">&#8249;</button>
+      <button class="lb-ctl lb-next" aria-label="Next">&#8250;</button>
+      <button class="lb-close" aria-label="Close">&times;</button>
+    </div>
+  </dialog>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
