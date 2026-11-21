@@ -180,28 +180,46 @@
     <div class="panel alt-1" id="builds">
       <h1>Builds</h1>
       <div class="panel-body">
-        <p class="note">Install the version compatible with your operating system. Both builds are 64-bit only.</p>
-        <ul class="reqs">
-          <li><b>Windows:</b> Windows 10 version 1809 (build 17763) or newer.</li>
-          <li><b>Linux:</b> a Debian-based distribution with glibc 2.35 or newer &mdash; Ubuntu 22.04 LTS, Debian 12 or Linux Mint 21 and newer.</li>
-        </ul>
+        <p class="note">Install the version compatible with your operating system. The builds are 64-bit only.</p>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
                 <th>Version</th>
                 <th>Windows x64</th>
-                <th>Debian-based Linux x64</th>
+                <th>Windows ARM64</th>
+                <th>Linux .deb AMD64</th>
+                <th>Linux .deb ARM64</th>
+                <th>Linux .rpm x86-64</th>
+                <th>Linux .rpm AArch64</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td class="v">0.1.0</td>
+                <!-- Windows x64 -->
                 <td><a class="btn sm"
                     href="https://github.com/MyDatabaseSQL/Home/releases/download/0.1.0/MyDatabaseSQL-0.1.0-x64-setup.exe">Download</a>
                 </td>
-                <td><button class="btn sm" type="button" disabled
-                    title="Linux build coming soon">Download</button>
+                <!-- Windows ARM64 -->
+                <td><a class="btn sm"
+                    href="https://github.com/MyDatabaseSQL/Home/releases/download/0.1.0/MyDatabaseSQL-0.1.0-arm64-setup.exe">Download</a>
+                </td>
+                <!-- Linux .deb x64 -->
+                <td><a class="btn sm"
+                    href="https://github.com/MyDatabaseSQL/Home/releases/download/0.1.0/mydatabasesql_0.1.0_amd64.deb">Download</a>
+                </td>
+                <!-- Linux .deb ARM64 -->
+                <td><a class="btn sm"
+                    href="https://github.com/MyDatabaseSQL/Home/releases/download/0.1.0/mydatabasesql_0.1.0_arm64.deb">Download</a>
+                </td>
+                <!-- Linux .rpm x64 -->
+                <td><a class="btn sm"
+                    href="https://github.com/MyDatabaseSQL/Home/releases/download/0.1.0/mydatabasesql-0.1.0-1.x86_64.rpm">Download</a>
+                </td>
+                <!-- Linux .rpm ARM64 -->
+                <td><a class="btn sm"
+                    href="https://github.com/MyDatabaseSQL/Home/releases/download/0.1.0/mydatabasesql-0.1.0-1.aarch64.rpm">Download</a>
                 </td>
               </tr>
             </tbody>
